@@ -24,13 +24,13 @@ if [[ $# -ne 0 ]]; then
     timer=0
     while true
     do
-      sleep 5
+      sleep ${TIME_INTERVAL}
       curl -s -o /dev/null -w "%{http_code}" http://localhost:27991/status
       echo ""
 
       timer=$((timer+1))
 
-      if [ $timer -eq ${TIME_INTERVAL} ]
+      if [ $timer -eq ${STATUS_FRQUENCY} ]
       then
         reporttime=`date '+%Y%m%d%H%M%S'`
         PORTAL_URL_UPDATED="${PORTAL_URL}_${reporttime}"
