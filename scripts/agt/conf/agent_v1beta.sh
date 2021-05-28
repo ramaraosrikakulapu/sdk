@@ -20,8 +20,8 @@ function getProperty {
 
 if [[ $# -ne 0 ]]; then
     nohup agent "$@" &
-    source ./agent_v1beta_lib.sh
-    $(updateDatabase)
+    source ~/.ec/agt/conf/agent_v1beta_lib.sh
+    updateDatabase
     return 0
 fi
 

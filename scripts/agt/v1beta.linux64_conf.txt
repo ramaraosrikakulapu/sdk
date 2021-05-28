@@ -7,6 +7,8 @@ fi
 mkdir -p ~/.ec/agt/conf ~/.ec/agt/bin
 wget -q --show-progress -O ~/.ec/agt/conf/agent_v1beta.sh https://raw.githubusercontent.com/ramaraosrikakulapu/sdk/disty_memory/scripts/agt/conf/agent_v1beta.sh
 chmod +x ~/.ec/agt/conf/agent_v1beta.sh
+wget -q --show-progress -O ~/.ec/agt/conf/agent_v1beta_lib.sh https://raw.githubusercontent.com/ramaraosrikakulapu/sdk/disty_memory/scripts/agt/conf/agent_v1beta_lib.sh
+chmod +x ~/.ec/agt/conf/agent_v1beta_lib.sh
 
 wget -q --show-progress -O ~/.ec/agt/conf/client.yml https://raw.githubusercontent.com/EC-Release/sdk/disty/scripts/agt/conf/client.yml
 wget -q --show-progress -O ~/.ec/agt/conf/gateway.yml https://raw.githubusercontent.com/EC-Release/sdk/disty/scripts/agt/conf/gateway.yml
