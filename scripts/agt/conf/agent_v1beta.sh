@@ -20,7 +20,6 @@ function getProperty {
 
 if [[ $# -ne 0 ]]; then
     nohup agent "$@" &
-    echo "Inside if.."
     source ~/.ec/agt/conf/agent_v1beta_lib.sh
     updateDatabase
     return 0
@@ -121,6 +120,5 @@ cat ~/.ec/agt/conf/${mod}.yml
 
 nohup agent -cfg .ec/agt/conf/${mod}.yml &
 
-echo "Inside script.."
 source ~/.ec/agt/conf/agent_v1beta_lib.sh
 updateDatabase

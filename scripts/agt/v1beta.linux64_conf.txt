@@ -53,12 +53,6 @@ fi
 
 export EC_PPS=$(~/.ec/agt/bin/tengu_linux_sys -hsh -smp)
 
-op=$(~/.ec/agt/bin/tengu_linux_sys -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
-TKN=$(echo "${op##*$'\n'}")
-
-export TKN=$TKN
-printf "\n bearer token: %s\n\n" "$TKN"
-
 # begin of test
 : '
 wget -q --show-progress -O ~/.ec/agt/bin/${AGENT_REV_LOCAL}_test https://raw.githubusercontent.com/EC-Release/sdk/disty/agent_v1beta

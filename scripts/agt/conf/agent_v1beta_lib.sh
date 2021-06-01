@@ -34,6 +34,12 @@ function updateDatabase {
       healthresultupdated=`echo ${healthresult} | sed 's/"//g'`
 
       data="{\"parent\":\"${PARENT_NODE}\",\"data\":\"${healthresultupdated}\"}"
+
+      op=$(~/.ec/agt/bin/tengu_linux_sys -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
+      TKN=$(echo "${op##*$'\n'}")
+      export TKN=$TKN
+      printf "\n bearer token: %s\n\n" "$TKN"
+
       ~/.ec/agt/bin/tengu_linux_sys -ivk -tkn "${TKN}" -url "${PORTAL_URL_UPDATED}" -dat $data -mtd POST
       timer=0
       echo "------------------------------------------------------------"
