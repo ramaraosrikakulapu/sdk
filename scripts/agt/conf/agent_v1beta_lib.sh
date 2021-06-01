@@ -17,12 +17,18 @@ function updateDatabase {
       reporttime=`date '+%Y%m%d%H%M%S'`
       PORTAL_URL_UPDATED="${PORTAL_URL}_${reporttime}"
 
-      searchstr="hca"
-      process=`ps -ef | grep agent | grep hca`
-      temp=${process#*$searchstr}
-      hca=`echo $temp | awk '{print $1}'`
-
+      # returns hca from yaml configuration
       hca=`env | grep ^conf\\.hca= | cut -d= -f2-`
+
+      if [ -z $hca ]
+      then
+        # Script running with flags
+        searchstr="hca"
+        process=`ps -ef | grep agent | grep hca`
+        temp=${process#*$searchstr}
+        hca=`echo $temp | awk '{print $1}'`
+      fi
+
       echo "health page: ${hca} "
       curl http://localhost:${hca}/health
       healthresult=`curl http://localhost:${hca}/health`
