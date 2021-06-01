@@ -5,14 +5,13 @@ function updateDatabase {
   while true
   do
     sleep ${TIME_INTERVAL}
-    echo "status result: "
-    curl http://localhost:27991/status -v
+
     curl -s -o /dev/null -w "%{http_code}" http://localhost:27991/status
     echo ""
 
     timer=$((timer+1))
 
-    if [ $timer -eq ${STATUS_FRQUENCY} ]
+    if [ $timer -eq ${STATUS_FREQUENCY} ]
     then
       reporttime=`date '+%Y%m%d%H%M%S'`
       PORTAL_URL_UPDATED="${PORTAL_URL}_${reporttime}"
