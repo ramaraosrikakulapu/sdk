@@ -5,6 +5,8 @@ function updateDatabase {
   while true
   do
     sleep ${TIME_INTERVAL}
+    echo "status result: "
+    curl http://localhost:27991/status -v
     curl -s -o /dev/null -w "%{http_code}" http://localhost:27991/status
     echo ""
 
@@ -20,7 +22,9 @@ function updateDatabase {
       temp=${process#*$searchstr}
       hca=`echo $temp | awk '{print $1}'`
 
-      healthresult=`curl http://localhost:6193/health`
+      echo "health page: ${hca} "
+      curl http://localhost:${hca}/health
+      healthresult=`curl http://localhost:${hca}/health`
       healthresultupdated=`echo ${healthresult} | sed 's/"//g'`
 
       data="{\"parent\":\"${PARENT_NODE}\",\"data\":\"${healthresultupdated}\"}"
