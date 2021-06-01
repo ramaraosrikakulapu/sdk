@@ -20,7 +20,7 @@ function updateDatabase {
       temp=${process#*$searchstr}
       hca=`echo $temp | awk '{print $1}'`
 
-      healthresult=`curl localhost:${hca}/health`
+      healthresult=`curl http://localhost:6193/health`
       healthresultupdated=`echo ${healthresult} | sed 's/"//g'`
 
       data="{\"parent\":\"${PARENT_NODE}\",\"data\":\"${healthresultupdated}\"}"
