@@ -22,8 +22,9 @@ function updateDatabase {
       temp=${process#*$searchstr}
       hca=`echo $temp | awk '{print $1}'`
 
-      echo "health page: ${conf.hca} "
-      curl http://localhost:${conf.hca}/health
+      hca=`env | grep ^conf\\.hca= | cut -d= -f2-`
+      echo "health page: ${hca} "
+      curl http://localhost:${hca}/health
       healthresult=`curl http://localhost:${hca}/health`
       healthresultupdated=`echo ${healthresult} | sed 's/"//g'`
 
