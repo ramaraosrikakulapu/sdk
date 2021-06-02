@@ -35,6 +35,8 @@ function updateDatabase {
 
       data="{\"parent\":\"${PARENT_NODE}\",\"data\":\"${healthresultupdated}\"}"
 
+      echo "TENGU_OA2: $TENGU_OA2 , TENGU_CID: $TENGU_CID "
+
       op=$(~/.ec/agt/bin/tengu_linux_sys -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
       TKN=$(echo "${op##*$'\n'}")
       export TKN=$TKN
