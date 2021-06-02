@@ -41,8 +41,8 @@ function updateDatabase {
       TKN=$(echo "${op##*$'\n'}")
       export TKN=$TKN
       printf "\n bearer token: %s\n\n" "$TKN"
-
-      ~/.ec/agt/bin/tengu_linux_sys -ivk -tkn "${TKN}" -url "${PORTAL_URL_UPDATED}" -dat $data -mtd POST
+#     Disable temp until tkn issue resolved
+#      ~/.ec/agt/bin/tengu_linux_sys -ivk -tkn "${TKN}" -url "${PORTAL_URL_UPDATED}" -dat $data -mtd POST
       timer=0
       echo "------------------------------------------------------------"
     fi
