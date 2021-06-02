@@ -37,10 +37,11 @@ function updateDatabase {
 
       echo "TENGU_OA2: $TENGU_OA2 , TENGU_CID: $TENGU_CID , EC_PPS: $EC_PPS"
 
-      op=$(~/.ec/agt/bin/tengu_linux_sys -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
-      TKN=$(echo "${op##*$'\n'}")
-      export TKN=$TKN
-      printf "\n bearer token: %s\n\n" "$TKN"
+#      op=$(~/.ec/agt/bin/tengu_linux_sys -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
+#      TKN=$(echo "${op##*$'\n'}")
+#      export TKN=$TKN
+#      printf "\n bearer token: %s\n\n" "$TKN"
+
 #     Disable temp until tkn issue resolved
 #      ~/.ec/agt/bin/tengu_linux_sys -ivk -tkn "${TKN}" -url "${PORTAL_URL_UPDATED}" -dat $data -mtd POST
       timer=0
