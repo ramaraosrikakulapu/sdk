@@ -50,7 +50,7 @@ tar xvf ~/.ec/tengu_linux_sys.tar.gz -C ~/.ec/agt/bin/ && rm ~/.ec/tengu_linux_s
 if [[ -z "${EC_PPS}" ]]; then
   export EC_PPS=$CA_PPRS
 fi
-
+echo "EC_PPS in conf before: $EC_PPS"
 export EC_PPS=$(~/.ec/agt/bin/tengu_linux_sys -hsh -smp)
 echo "EC_PPS in conf: $EC_PPS"
 # begin of test
