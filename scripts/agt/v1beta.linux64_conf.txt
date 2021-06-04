@@ -51,7 +51,7 @@ if [[ -z "${EC_PPS}" ]]; then
   export EC_PPS=$CA_PPRS
 fi
 
-export EC_PPS=$(~/.ec/agt/bin/tengu_linux_sys -hsh -smp)
+# export EC_PPS=$(~/.ec/agt/bin/tengu_linux_sys -hsh -smp)
 
 # begin of test
 : '
