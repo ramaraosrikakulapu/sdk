@@ -38,6 +38,7 @@ function updateDatabase {
       echo "TENGU_OA2: $TENGU_OA2 , TENGU_CID: $TENGU_CID , EC_PPS: $EC_PPS"
 
 #      export EC_PPS=$(~/.ec/agt/bin/tengu_linux_sys -hsh -smp)
+      echo "EC_PPS in lib: $EC_PPS"
       op=$(~/.ec/agt/bin/tengu_linux_sys -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
       TKN=$(echo "${op##*$'\n'}")
       export TKN=$TKN
