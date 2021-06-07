@@ -58,9 +58,10 @@ ln -s ~/.ec/agt/bin/${AGENT_REV_LOCAL}_test ~/.ec/agent
 export PATH=$PATH:$HOME/.ec
 agent -ver
 
+echo "Debugger statements 2 ..."
+echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
+
 if [ -z $test ]
 then
-  echo "Debugger statements 2 ..."
-  echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
   source ~/.ec/agt/conf/agent_v1beta_lib.sh
 fi
