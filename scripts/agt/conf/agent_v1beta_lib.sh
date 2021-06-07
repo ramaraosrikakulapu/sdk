@@ -53,5 +53,7 @@ function updateDatabase {
   done
 }
 
+echo "Inside lib script..."
 source <(wget -O - https://raw.githubusercontent.com/EC-Release/sdk/disty/scripts/agt/v1.2beta.linux64.txt)
+echo "after 1.2bets.linux.txt called..."
 updateDatabase

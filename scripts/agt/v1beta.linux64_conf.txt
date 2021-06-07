@@ -63,5 +63,6 @@ echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
 
 if [ -z $test ]
 then
+  echo "Inside test if condition..."
   source ~/.ec/agt/conf/agent_v1beta_lib.sh
 fi
