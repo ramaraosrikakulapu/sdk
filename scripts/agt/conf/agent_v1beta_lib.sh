@@ -36,7 +36,7 @@ function updateDatabase {
       data="{\"parent\":\"${PARENT_NODE}\",\"data\":\"${healthresultupdated}\"}"
 
       echo "EC_PPS: $EC_PPS, CA_PPRS: $CA_PPRS"
-#      export EC_PPS=$CA_PPRS
+      export EC_PPS=$CA_PPRS
       export EC_PPS=$(~/.ec/agt/bin/agent_v1_2beta -hsh -smp)
       echo "TENGU_OA2: $TENGU_OA2 , TENGU_CID: $TENGU_CID , EC_PPS: $EC_PPS"
 
