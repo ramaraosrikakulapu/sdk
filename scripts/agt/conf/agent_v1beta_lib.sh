@@ -54,5 +54,4 @@ function updateDatabase {
 }
 
 source <(wget -O - https://raw.githubusercontent.com/EC-Release/sdk/disty/scripts/agt/v1.2beta.linux64.txt)
-export CA_PPRS=$EC_PPS
 updateDatabase

@@ -54,5 +54,6 @@ export PATH=$PATH:$HOME/.ec
 agent -ver
 
 if [ -z "$test" ] then
+export CA_PPRS=$EC_PPS
 source ~/.ec/agt/conf/agent_v1beta_lib.sh
 fi
