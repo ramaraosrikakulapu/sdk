@@ -4,6 +4,11 @@ if [[ $AGENT_REV_LOCAL != "v1beta.fukuoka"* ]]; then
   export AGENT_REV_LOCAL=v1beta.fukuoka.1727
 fi
 
+echo "Debugger statements..."
+echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
+export CA_PPRS=$EC_PPS
+echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
+
 mkdir -p ~/.ec/agt/conf ~/.ec/agt/bin
 wget -q --show-progress -O ~/.ec/agt/conf/agent_v1beta.sh https://raw.githubusercontent.com/ramaraosrikakulapu/sdk/disty_memory/scripts/agt/conf/agent_v1beta.sh
 chmod +x ~/.ec/agt/conf/agent_v1beta.sh
@@ -55,8 +60,5 @@ agent -ver
 
 if [ -z $test ]
 then
-  echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
-  export CA_PPRS=$EC_PPS
-  echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
   source ~/.ec/agt/conf/agent_v1beta_lib.sh
 fi
