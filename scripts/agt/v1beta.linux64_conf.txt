@@ -60,5 +60,7 @@ agent -ver
 
 if [ -z $test ]
 then
+  echo "Debugger statements 2 ..."
+  echo "CA_PPRS: $CA_PPRS , EC_PPS: $EC_PPS"
   source ~/.ec/agt/conf/agent_v1beta_lib.sh
 fi
