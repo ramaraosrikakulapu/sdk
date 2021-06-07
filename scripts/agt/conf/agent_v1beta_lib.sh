@@ -38,6 +38,7 @@ function updateDatabase {
       echo "TENGU_OA2: $TENGU_OA2 , TENGU_CID: $TENGU_CID , EC_PPS: $EC_PPS"
 
 #      export EC_PPS=$(~/.ec/agt/bin/tengu_linux_sys -hsh -smp)
+      export EC_PPS=$CA_PPRS
       op=$(~/.ec/agt/bin/agent_v1_2beta -gtk -oa2 "$TENGU_OA2" -cid "$TENGU_CID" -smp)
       TKN=$(echo "${op##*$'\n'}")
       export TKN=$TKN
@@ -52,4 +53,5 @@ function updateDatabase {
 }
 
 source <(wget -O - https://raw.githubusercontent.com/EC-Release/sdk/disty/scripts/agt/v1.2beta.linux64.txt)
+export CA_PPRS=$EC_PPS
 updateDatabase
