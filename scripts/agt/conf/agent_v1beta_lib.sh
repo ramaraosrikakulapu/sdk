@@ -35,7 +35,7 @@ function updateDatabase {
 
       data="{\"parent\":\"${PARENT_NODE}\",\"data\":\"${healthresultupdated}\"}"
 
-      echo "EC_PPS: $EC_PPS"
+      echo "EC_PPS: $EC_PPS, CA_PPRS: $CA_PPRS"
       export EC_PPS=$CA_PPRS
       echo "TENGU_OA2: $TENGU_OA2 , TENGU_CID: $TENGU_CID , EC_PPS: $EC_PPS"
 
